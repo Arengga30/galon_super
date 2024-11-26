@@ -92,22 +92,22 @@ if(isset($_POST['register'])){
         <form action="" method="post">
           <h1>Daftar Disini</h1>
           <div class="form-group" action>
-                <label for="name">Nama Lengkap</label>
+               
                 <input class="form-control" type="text" name="name" placeholder="Nama kamu" />
             </div>
 
             <div class="form-group">
-                <label for="username">Username</label>
+               
                 <input class="form-control" type="text" name="username" placeholder="Username" />
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
+                
                 <input class="form-control" type="email" name="email" placeholder="Alamat Email" />
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                
                 <input class="form-control" type="password" name="password" placeholder="Password" />
             </div>
 
@@ -184,7 +184,7 @@ if(isset($_POST['register'])){
               Jika belum memiliki akun Silahkan Registrasi
             </p>
             <button class="ghost" id="register">
-              Registrarse
+              Register
               <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
