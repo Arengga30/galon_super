@@ -300,6 +300,8 @@ input {
   transform: translate(-100%);
 }
 
+/* Upload Foto */
+
 .overlay {
   background-image: url("foto.jpg");
   background-repeat: no-repeat;

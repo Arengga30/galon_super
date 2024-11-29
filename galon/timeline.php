@@ -48,7 +48,7 @@
       <div class="header--wrapper">
         <div class="header--title">
           <span>Admin!</span>
-          <h2>Settings</h2>
+          <h2>Dashboard</h2>
         </div>
         <div class="user--info">
           <div class="search--box">
