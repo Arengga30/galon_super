@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2024 at 05:07 AM
+-- Generation Time: Dec 01, 2024 at 08:13 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `super_galon`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_galon`
+--
+
+CREATE TABLE `data_galon` (
+  `nim` char(9) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `jurusan` varchar(30) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `telp` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `data_galon`
+--
+
+INSERT INTO `data_galon` (`nim`, `nama`, `jurusan`, `alamat`, `telp`) VALUES
+('E31232284', 'ARENGGA PRATAMA ', 'Teknik Informatika', 'jember', '089504732922');
 
 -- --------------------------------------------------------
 
@@ -43,13 +64,17 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `photo`) VALUES
 (1, 'ardianta', 'ardianta_pargo@yahoo.co.id', '$2y$10$HIEq2w.8Et9RsJmY4TMKye4aVCxOd9xJTOtG4vyOEmo.GIBxaPQHK', 'Ardianta Pargo', 'default.svg'),
 (3, 'petanikode', 'info@petanikode.com', '$2y$10$uXa.Hz9rr8gkv4ztaqf6FO84iW64gXHbeyEOy1tIQ5wmqMjTk0yQa', 'Petani Kode', 'default.svg'),
-(4, 'arengga', 'renggalaviosa78@gmail.com', '$2y$10$KLK6Ew46hxVDMFWq0QEhi.ftbs/WoIDk6nJSouoV2yRRuQV5sQ.0.', 'arenggap', 'default.svg'),
-(5, 'ryanl', 'reyan@gmail.com', '$2y$10$ieOl6yOuKOCc4CphdSbCc.NSAbA3xao/wvKSrqEHDS/iN6x2Bviki', 'ryan', 'default.svg'),
-(6, 'roihanjaya', 'roihanjaya@gmail.com', '$2y$10$IH9rOuxCOf01Kqb6KohMy.9rBCuvjc2axMjZes7r.rVPdmc.Ptwqi', 'roihan', 'default.svg');
+(7, 'arengga', 'renggalaviosa78@gmail.com', '$2y$10$on.SxrNrkW41YFwWABSRGeEvLWL/t65h29wuPLJew34PLYdbLx5tq', 'Arengga Pratama R', 'default.svg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `data_galon`
+--
+ALTER TABLE `data_galon`
+  ADD PRIMARY KEY (`nim`);
 
 --
 -- Indexes for table `users`
@@ -66,7 +91,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -30,6 +30,12 @@
           </a>
         </li>
         <li>
+          <a href="data_galon.php">
+            <i class="fas fa-chart-bar"></i>
+            <span>Data Galon</span>
+          </a>
+        </li>
+        <li>
           <a href="Settings.html">
             <i class="fas fa-cog"></i>
             <span>Settings</span>
