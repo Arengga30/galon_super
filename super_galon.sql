@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2024 at 08:13 AM
+-- Generation Time: Dec 02, 2024 at 03:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `data_galon` (
-  `nim` char(9) NOT NULL,
+  `id` int(9) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jurusan` varchar(30) NOT NULL,
+  `jenis` varchar(30) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -39,8 +39,9 @@ CREATE TABLE `data_galon` (
 -- Dumping data for table `data_galon`
 --
 
-INSERT INTO `data_galon` (`nim`, `nama`, `jurusan`, `alamat`, `telp`) VALUES
-('E31232284', 'ARENGGA PRATAMA ', 'Teknik Informatika', 'jember', '089504732922');
+INSERT INTO `data_galon` (`id`, `nama`, `jenis`, `alamat`, `telp`) VALUES
+(1, 'Roihan', 'Gas 3kg', 'Situbondo,jalan jember', '123456789'),
+(2, 'zaka', 'Galon Aqua', 'Bondowoso', '83362625515172');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `name`, `photo`) VAL
 -- Indexes for table `data_galon`
 --
 ALTER TABLE `data_galon`
-  ADD PRIMARY KEY (`nim`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -86,6 +87,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `data_galon`
+--
+ALTER TABLE `data_galon`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
