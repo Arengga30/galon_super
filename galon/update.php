@@ -1,8 +1,8 @@
 <?php
   include 'config.php';
 
-  $nim = $_GET['nim'];
-  $sqlGet = "SELECT * FROM data_galon WHERE nim= '$nim'";
+  $id = $_GET['id'];
+  $sqlGet = "SELECT * FROM data_galon WHERE id= '$id'";
   $queryGet = mysqli_query($conn, $sqlGet);
   $data = mysqli_fetch_array($queryGet);
 
@@ -20,26 +20,26 @@
     <div class="w-50 mx-auto border p-3 mt-5">
         <a href="data_galon.php" class="">Kembali Ke Home</a>
         <form action="update.php" method="post">
-            <label for="nim">NIM</label>
-            <input type="text" id="nim" name="nim" value="<?php echo "$data[nim]";?>" class="form-control" readonly>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id" value="<?php echo "$data[id]";?>" class="form-control" readonly>
 
-            <label for="nim">Nama </label>
+            <label for="id">Nama </label>
             <input type="text" id="nama" name="nama" value="<?php echo "$data[nama]";?>" class="form-control" required>
 
-            <label for="jurusan">Jurusan</label>
-            <select name="jurusan" id="jurusan" class="form-select">
-                <option ><?php echo "$data[jurusan]";?></option>
-                <option value="Informatika">Teknik Informatika</option>
-                <option value="arsitek">Teknik arsitek</option>
-                <option value="sipil">Teknik sipil</option>
-                <option value="mesin">Teknik mesin</option>
-                <option value="elektro">Teknik elektro</option>
+            <label for="jenis">Jenis</label>
+            <select name="jenis" id="jenis" class="form-select">
+                <option ><?php echo "$data[jenis]";?></option>
+                <option value="galon_aqua">Galon Aqua</option>
+                <option value="galon_lemineral">Galon Lemineral</option>
+                <option value="gas_3kg">Gas 3kg</option>
+                <option value="gas_5kg">Gas 5kg</option>
+                <option value="gas_10kg">Gas 10kg</option>
             </select>
 
-            <label for="nim">Alamat</label>
+            <label for="id">Alamat</label>
             <input type="text" id="alamat" name="alamat" value="<?php echo "$data[alamat]";?>" class="form-control" required>
 
-            <label for="nim">Telepon</label>
+            <label for="id">Telepon</label>
             <input type="text" id="telp" name="telp" value="<?php echo "$data[telp]";?>" class="form-control" required>
 
             <button class="btn btn-success mt-3" type="submit" name="tambah" value="Tambah Data">Tambah</button>
@@ -49,34 +49,34 @@
    
     <?php
         if (isset($_POST['tambah'])){
-            $nim = $_POST['nim'];
+            $id = $_POST['id'];
             $nama = $_POST['nama'];
-            $jurusan = $_POST['jurusan'];
+            $jenis = $_POST['jenis'];
             $alamat = $_POST['alamat'];
             $telp = $_POST['telp'];
 
-            echo "nim: $nim";
+            // echo "id: $id";
 
-            $jurusanSelect = $_POST['jurusan'];
-            if ($jurusanSelect== 'Informatika'){
-               $jurusan = 'Teknik Informatika'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'arsitek'){
-               $jurusan = 'Teknik arsitek'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'sipil'){
-               $jurusan = 'Teknik sipil'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'mesin'){
-               $jurusan = 'Teknik mesin'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'elektro'){
-               $jurusan = 'Teknik elektro'; 
+            $jenisSelect = $_POST['jenis'];
+            if ($jenisSelect== 'galon_aqua'){
+               $jenis = 'Galon Aqua'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'galon_lemineral'){
+               $jenis = 'Galon Lemineral'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_3kg'){
+               $jenis = 'Gas 3kg'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_5kg'){
+               $jenis = 'Gas 5kg'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_10kg'){
+               $jenis = 'Gas 10kg'; 
             }
 
             $sqlupdate = "UPDATE data_galon 
-                          SET nama= '$nama',jurusan='$jurusan', alamat='$alamat', telp='$telp'
-                          WHERE nim='$nim'";
+                          SET nama= '$nama',jenis='$jenis', alamat='$alamat', telp='$telp'
+                          WHERE id='$id'";
             $queryupdate = mysqli_query($conn, $sqlupdate);
 
             header("location: data_galon.php");

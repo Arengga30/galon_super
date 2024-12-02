@@ -2,8 +2,8 @@
 include 'config.php';
 
 
-$nim = $_GET['nim'];
-$sqlDelete = "DELETE FROM data_galon WHERE nim='$nim'";
+$id = $_GET['id'];
+$sqlDelete = "DELETE FROM data_galon WHERE id='$id'";
 mysqli_query($conn, $sqlDelete);
 
 header("location: data_galon.php");

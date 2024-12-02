@@ -12,28 +12,28 @@
 </head>
 <body>
     <div class="w-50 mx-auto border p-3 mt-5">
-        <a href="data_galon.php" class="">Kembali Ke Home</a>
+        <a href="data_galon.php" class="btn btn-primary btn-md mb-3" class="">Kembali Ke Home</a>
         <form action="add.php" method="post">
-            <label for="nim">NIM</label>
-            <input type="text" id="nim" name="nim" class="form-control" required>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id" class="form-control" required>
 
-            <label for="nim">Nama </label>
+            <label for="id">Nama </label>
             <input type="text" id="nama" name="nama" class="form-control" required>
 
-            <label for="jurusan">Jurusan</label>
-            <select name="jurusan" id="jurusan" class="form-select">
-                <option >Pilih Jurusan</option>
-                <option value="Informatika">Teknik Informatika</option>
-                <option value="arsitek">Teknik arsitek</option>
-                <option value="sipil">Teknik sipil</option>
-                <option value="mesin">Teknik mesin</option>
-                <option value="elektro">Teknik elektro</option>
+            <label for="jenis">Jenis</label>
+            <select name="jenis" id="jenis" class="form-select">
+                <option >Pilih jenis</option>
+                <option value="galon_aqua">Galon Aqua</option>
+                <option value="galon_lemineral">Galon Lemineral</option>
+                <option value="gas_3kg">Gas 3kg</option>
+                <option value="gas_5kg">Gas 5kg</option>
+                <option value="gas_10kg">Gas 10kg</option>
             </select>
 
-            <label for="nim">Alamat</label>
+            <label for="id">Alamat</label>
             <input type="text" id="alamat" name="alamat" class="form-control" required>
 
-            <label for="nim">Telepon</label>
+            <label for="id">Telepon</label>
             <input type="text" id="telp" name="telp" class="form-control" required>
 
             <button class="btn btn-success mt-3" type="submit" name="tambah" value="Tambah Data">Tambah</button>
@@ -43,35 +43,35 @@
    
     <?php
         if (isset($_POST['tambah'])){
-            $nim = $_POST['nim'];
+            $id = $_POST['id'];
             $nama = $_POST['nama'];
-            $jurusan = $_POST['jurusan'];
+            $jenis = $_POST['jenis'];
             $alamat = $_POST['alamat'];
             $telp = $_POST['telp'];
 
-            $jurusanSelect = $_POST['jurusan'];
-            if ($jurusanSelect== 'Informatika'){
-               $jurusan = 'Teknik Informatika'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'arsitek'){
-               $jurusan = 'Teknik arsitek'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'sipil'){
-               $jurusan = 'Teknik sipil'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'mesin'){
-               $jurusan = 'Teknik mesin'; 
-            }$jurusanSelect = $_POST['jurusan'];
-            if ($jurusan == 'elektro'){
-               $jurusan = 'Teknik elektro'; 
+            $jenisSelect = $_POST['jenis'];
+            if ($jenisSelect== 'galon_aqua'){
+               $jenis = 'Galon Aqua'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'galon_lemineral'){
+               $jenis = 'Galon Lemineral'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_3kg'){
+               $jenis = 'Gas 3kg'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_5kg'){
+               $jenis = 'Gas 5kg'; 
+            }$jenisSelect = $_POST['jenis'];
+            if ($jenis == 'gas_10kg'){
+               $jenis = 'Gas 10kg'; 
             }
 
             $sqlGet ="SELECT * FROM data_galon";
             $queryGet = mysqli_query($conn, $sqlGet);
             $cek = mysqli_num_rows($queryGet);
 
-            $sqlInsert = "INSERT INTO data_galon (nim,nama,jurusan,alamat,telp)
-                          VALUES ('$nim','$nama','$jurusan','$alamat','$telp')";
+            $sqlInsert = "INSERT INTO data_galon (id,nama,jenis,alamat,telp)
+                          VALUES ('$id','$nama','$jenis','$alamat','$telp')";
             
             $queryInsert = mysqli_query($conn, $sqlInsert);
 

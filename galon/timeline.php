@@ -18,17 +18,17 @@
       <div class="logo"></div>
       <ul class="menu">
         <li class="active">
-          <a href="index.html">
+          <a href="timeline.php">
             <i class="fas fa-tachometer-alt"></i>
             <span>Dashboard</span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="Grafik.html">
             <i class="fas fa-chart-bar"></i>
             <span>Grafik</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="data_galon.php">
             <i class="fas fa-chart-bar"></i>
@@ -42,7 +42,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="index.php">
             <i class="fas fa-sign-out-alt"></i>
             <span>Logout</span>
           </a>
