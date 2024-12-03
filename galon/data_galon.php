@@ -23,12 +23,12 @@
             <span>Dashboard</span>
           </a>
         </li>
-        <!-- <li>
-          <a href="Grafik.html">
+        <li>
+          <a href="pengeluaran.php">
             <i class="fas fa-chart-bar"></i>
-            <span>Grafik</span>
+            <span>Pengeluaran</span>
           </a>
-        </li> -->
+        </li>
         <li class="active">
           <a href="data_galon.php">
             <i class="fas fa-chart-bar"></i>
