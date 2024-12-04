@@ -33,12 +33,12 @@
         </li>
         <li>
           <a href="data_galon.php">
-            <i class="fas fa-chart-bar"></i>
+            <i class="fas fa-briefcase"></i>
             <span>Data Galon</span>
           </a>
         </li>
         <li>
-          <a href="Settings.html">
+          <a href="settings.php">
             <i class="fas fa-cog"></i>
             <span>Settings</span>
           </a>
@@ -319,5 +319,5 @@
       width: 100% !important;
       height: 100% !important;
     }
-  </style>e>
+  </style>
 </html>

@@ -29,18 +29,20 @@
             <span>Pengeluaran</span>
           </a>
         </li>
-        <li class="active">
-          <a href="data_galon.php">
+        <li>
+        <a href="data_galon.php">
             <i class="fas fa-briefcase"></i>
             <span>Data Galon</span>
-          </a>
+          </a> 
         </li>
-        <li>
+          
+        <li
+          class="active">
           <a href="settings.php">
             <i class="fas fa-cog"></i>
             <span>Settings</span>
           </a>
-        </li>
+          </li>
         <li>
           <a href="index.php">
             <i class="fas fa-sign-out-alt"></i>
@@ -54,7 +56,7 @@
       <div class="header--wrapper">
         <div class="header--title">
           <span>Admin!</span>
-          <h3><b>Data Galon</b></h3>
+          <h3><b>Settings</b></h3>
         </div>
         <div class="user--info">
           <div class="search--box">
@@ -68,51 +70,52 @@
         <div class="card--wrapper"></div>
 
 
-<div class="container mt-3">
+        <div class="container mt-3">
     <a href="add.php" class="btn btn-primary btn-md mb-3">Tambah Data</a>
     <table class="table table-striped table-hover table-bordered">
         <thead class="table-dark">
-            <th>id</th>
-            <th>Nama</th>
-            <th>Jenis</th>
-            <th>alamat</th>
-            <th>telepon</th>
-            <th>aksi</th>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>email</th>
+                <th>password</th>
+                <th>name</th>
+                <th>photo</th>
+                <th>actions</th> <!-- Tambahkan kolom untuk aksi -->
+            </tr>
         </thead>
-
+        <tbody>
         <?php
-            $sqlGet = "SELECT * FROM data_galon";
+            $sqlGet = "SELECT * FROM user";
             $query = mysqli_query($conn, $sqlGet);
 
             while($data = mysqli_fetch_array($query)){
-                 echo "
-                    <tbody>
-                     <tr>
-                        <td>$data[id]</td>
-                        <td>$data[nama]</td>
-                        <td>$data[jenis]</td>
-                        <td>$data[alamat]</td>
-                        <td>$data[telp]</td>
-                        <td>
-                            <div class='row'>
-                                <div class='col d-flex justify-content-center'>
-                                <a href='update.php?id=$data[id]' class='btn btn-sm btn-warning'>Update</a>
-                                </div>
-                                <div class='col d-flex justify-content-center'>
-                                <a href='delete.php?id=$data[id]' class='btn btn-sm btn-danger'>Delete</a>
-                                </div>
-                            
+                echo "
+                <tr>
+                    <td>{$data['id']}</td>
+                    <td>{$data['username']}</td>
+                    <td>{$data['email']}</td>
+                    <td>{$data['password']}</td>
+                    <td>{$data['name']}</td>
+                    <td>{$data['photo']}</td>
+                    <td>
+                        <div class='row'>
+                            <div class='col d-flex justify-content-center'>
+                                <a href='update.php?id={$data['id']}' class='btn btn-sm btn-warning'>Update</a>
                             </div>
-                        </td>
-        
-                      </tr>
-                    </tbody>
+                            <div class='col d-flex justify-content-center'>
+                                <a href='delete.php?id={$data['id']}' class='btn btn-sm btn-danger'>Delete</a>
+                            </div>
+                        </div> 
+                    </td>
+                </tr>
                 ";
             }
         ?>
+        </tbody>
     </table>
-    </div>
-    </div>
+</div>
+</div>
 </div>  
 </body>
 </html>
